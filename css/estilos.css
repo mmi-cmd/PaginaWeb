@@ -1,0 +1,808 @@
+/* Importar la fuente 'Poppins' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+
+/* Estilo global aplicado a todos los elementos */
+* {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-family: 'Poppins', sans-serif; /* Usa la fuente Poppins para todo el documento */
+}
+
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables CSS para colores globales */
+:root {
+    --color_text-primary: #BF967E; /* Color primario para textos y elementos */
+    --color_text-secundario: #A6826D; /* Color secundario para textos y bordes */
+    --color_text-terciario: #D9CAC1; /* Color terciario, probablemente para fondos o detalles */
+    --color_text-background: #D9CAC1; /* Color de fondo general */
+    --color_text-font: #0D0D0D; /* Color de fuente principal (negro) */
+}
+
+/* Header */
+
+header {
+    /* El header ocupa el 100% del ancho */
+    width: 100%;
+
+    /* Define la altura del header en 100px */
+    height: 90px;
+
+    /* Hace que el header permanezca fijo mientras se hace scroll */
+    position: fixed;
+
+    /* Controla el apilamiento del header para que esté por encima de otros elementos */
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; 
+    margin: 0; 
+    background-color: rgba(228, 218, 224, 0.507);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container_header {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    /* Usa flexbox para alinear los elementos hijos del logo */
+    display: flex;
+
+    /* Alinea verticalmente el contenido del logo */
+    align-items: center;
+
+    /* Posiciona el logo en un nivel superior, en caso de superposición */
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    width: 70px; /* Ancho del logo */
+    height: 70px; /* Altura del logo */
+}
+
+.menu {
+    /* Usa flexbox para alinear los elementos del menú */
+    display: flex;
+    justify-content: center;
+
+    /* Alinea verticalmente los elementos dentro del menú */
+    align-items: center;
+
+    /* Fondo transparente por defecto para el menú */
+    background-color: transparent;
+
+    /* Aplica una transición suave al cambiar el color de fondo */
+    transition: background-color 0.3s ease;
+
+    /* Hace que el menú se quede fijo en la parte superior cuando se hace scroll */
+    position: sticky;
+
+    /* Fija la posición del menú en la parte superior de la pantalla */
+    top: 0;
+
+    /* Asegura que el menú ocupe el ancho completo de la pantalla */
+    width: 100%;
+
+    /* Asegura que el menú esté en la parte superior de otros elementos */
+    z-index: 1000;
+    margin: 0;
+}
+
+.menu nav {
+    /* Añade un margen de 20px a los lados del menú de navegación */
+    margin: 0px 20px;
+    justify-content: center; /* Centra el contenido de navegación */
+    align-items: center;
+}
+
+.menu nav ul {
+    /* Usa flexbox para alinear los elementos de la lista horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu nav ul li {
+    /* Elimina los puntos de lista predeterminados */
+    list-style: none;
+
+    /* Añade un margen de 20px arriba y abajo, y 16px a los lados */
+    margin: 20px 16px;
+}
+
+.menu nav ul li a {
+    /* Aplica el color de texto secundario a los enlaces del menú */
+    color: var(--color_text-secundary);
+
+    /* Usa el tamaño de texto pequeño definido en las variables */
+    font-size: var(--lowText_font_size);
+
+    /* Define que el enlace esté en posición relativa */
+    position: relative;
+}
+
+.menu nav ul li a:hover {
+    /* Cambia el color del enlace al primario cuando se pasa el ratón sobre él */
+    color: var(--color_text-primary);
+}
+
+.btn_quote {
+    /* Hace que el botón se muestre como un bloque */
+    display: block;
+
+    /* Define el relleno del botón: 8px arriba/abajo, 40px a los lados */
+    padding: 8px 40px;
+
+    /* Añade un borde sólido de 2px del color de texto primario */
+    border: 1px solid var(--color_text-primary);
+
+    /* Aplica bordes redondeados de 8px al botón */
+    border-radius: 6px;
+
+    /* Hace el texto más grueso */
+    font-weight: 500;
+
+    /* Aplica el color de texto terciario al texto del botón */
+    color: var(--color_text-tertiary);
+
+    /* Añade un margen lateral de 20px */
+    margin: 0px 20px;
+
+    /* Aplica una transición suave de 300ms a todas las propiedades */
+    transition: all 300ms;
+}
+
+.btn_quote:hover {
+    /* Cambia el color del texto a blanco cuando se pasa el ratón */
+    color: white;
+
+    /* Cambia el fondo del botón al color primario */
+    background: var(--color_text-primary);
+}
+
+.menu .socialMedia {
+    /* Añade un margen de 10px a los lados del área de redes sociales */
+    margin: 0px 10px;
+}
+
+.menu .socialMedia a {
+    /* Añade un margen de 4px entre los iconos de redes sociales */
+    margin: 0px 4px;
+}
+
+.menu .socialMedia img {
+    width: 25px; /* Ancho de los iconos */
+    height: 25px; /* Altura de los iconos */
+}
+
+/* /End Header/ */
+
+/*Estilo del banner de entrada*/
+
+/* /Portada Inicio/ */
+
+.container_cover {
+    /* Añade un relleno (padding) en la parte superior e inferior de 100px */
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    background: var(--color_text-secundario);
+    margin-top: 3px;
+}
+
+.cover {
+    /* Limita el ancho máximo del contenedor a 1200px */
+    max-width: 1200px;
+
+    /* Centra horizontalmente el contenedor dentro de su padre */
+    margin: auto;
+
+    /* Añade un margen superior de 100px para separar del contenido anterior */
+    margin-top: 100px;
+
+    /* Usa flexbox para alinear los elementos hijos */
+    display: flex;
+
+    /* Alinea verticalmente los elementos hijos al centro */
+    align-items: center;
+
+    /* Añade un relleno lateral de 20px para dar espacio interno */
+    padding: 0px 20px;
+}
+
+
+.text__cover {
+    /* Ocupa el 100% del ancho disponible */
+    width: 100%;
+
+    /* Añade un relleno a la derecha de 150px para separar del contenido adyacente */
+    padding-right: 150px;
+}
+
+.text__cover h1 {
+    /* Establece un tamaño de fuente grande para el título */
+    font-size: 50px;
+
+    /* Aplica un color al texto definido por la variable --color_text-secundary */
+    color: var(--color_text-secundario);
+}
+
+.text__cover p {
+    /* Establece el tamaño de fuente usando la variable --text_paragraph */
+    font-size: 18px;
+
+    /* Añade un margen superior de 40px para separar del contenido anterior */
+    margin-top: 40px;
+
+    /* Aplica un color al texto usando la variable --color_text-tertiary */
+    color: var(--color_text-font);
+}
+
+
+
+
+.btn_text {
+    /* Define que el botón se mostrará como un bloque ocupando todo el ancho */
+    display: block;
+
+    /* Fija un ancho de 150px para el botón */
+    width: 150px;
+
+    /* Añade un margen superior de 40px para separarlo del contenido anterior */
+    margin-top: 40px;
+
+    /* Añade un relleno de 10px en la parte superior/inferior y 20px en los laterales */
+    padding: 10px 20px;
+
+    /* Centra el texto dentro del botón */
+    text-align: center;
+
+    /* Aplica un peso de fuente de 500 para hacer el texto más grueso */
+    font-weight: 500;
+
+    /* Aplica el color de fondo definido por la variable --main_color-primary */
+    background: var(--color_text-secundario);
+
+    /* Define el color del texto como blanco */
+    color: white;
+
+    /* Aplica bordes redondeados de 8px */
+    border-radius: 8px;
+
+    /* Cambia el cursor a pointer al pasar sobre el botón (indicando que es clicable) */
+    cursor: pointer;
+
+    /* Aplica una transición suave de 300ms a todas las propiedades del botón */
+    transition: all 300ms;
+}
+
+
+.btn_text:hover {
+    /* Al pasar el cursor, cambia el fondo a transparente */
+    background: transparent;
+
+    /* Aplica un borde sólido del color definido por la variable --main_color-primary */
+    border: 2px solid var(--color_text-primary);
+
+    /* Cambia el color del texto usando la variable --color_text-tertiary */
+    color: black;
+}
+
+
+.cover img{
+    width: 400px ;
+    height: 400px;
+}
+
+.image_cover {
+    width: 100%;
+}
+
+/*End portada Inicio*/
+
+.container_card-primary{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.card-primary{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_card-primary{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text_card-primary p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+
+.text_card-primary h1{
+    text-align: center;
+}
+
+.container_box-cardPrimary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+.box_card-primary{
+    max-width: 350px;
+    padding: 60px 40px;
+    border: 1px solid var(--color_text-background);
+    border-radius: 20px;
+    margin: 14px;
+    transition: all 300ms;
+
+}
+
+.box_card-primary:hover{
+    border: 1px solid transparent;
+    box-shadow: var(--color_text-primary);
+}
+
+
+.box_card-primary img{
+    height: 64px ;
+    width: 64px;
+}
+
+/*Inici del about*/
+
+.contaniner_about{
+    background-color: var(--color_text-background);
+    padding-top: 150px;
+    padding-bottom: 150px;
+    
+}
+
+.about{
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin: auto;
+    display: flex;
+    padding-bottom: 100px;
+    align-items: normal;
+}
+
+.text_about{
+    width: 100%;
+    padding-right: 100px;
+    margin-left: 30px;
+}
+
+.about img{
+    margin-top: 230px;
+    width: 320px ;
+    height: 220px;
+    display: flex;
+    margin-left: 50px;
+    border-radius: 10px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: all 300ms;
+}
+
+.about img:hover{
+    transform: scale(1.05);
+}
+
+.image_about{
+    display: flex;
+    
+}
+.text_about h1{
+    margin-top: 100px;
+    font-size: 30px;
+    color: var(--color_text-secundario)
+}
+
+.text_about p{
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+/* inicio del service */
+.container_service{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.service{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_service{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text_service p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+
+.text_service h1{
+    text-align: center;
+}
+
+.container_box_service{
+    display: flex; /* cambia la disposición de los hijos del contenedor, que ahora se organizarán en fila (por defecto) o en columna */
+    flex-wrap: wrap; /* Permite que los elementos secundarios se muevan a una nueva línea si no hay suficiente espacio en una sola fila. */
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.box_service{
+    max-width: 350px;
+    padding: 60px 40px;
+    border: 1px solid var(--color_text-background);
+    border-radius: 20px;
+    margin: 14px;
+    transition: all 300ms;
+}
+.box_service:hover{
+    border: 1px solid transparent;
+    box-shadow: var(--color_text-primary);
+}
+.box_service img{
+    height: 35px ;
+    width: 35px;
+}
+
+/* form */
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+.cover{
+    margin-top: 10px;
+    
+}
+.contact-form h2{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.contact-form  {
+    background: var(--color_text-background);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px; /* Aumenta el ancho máximo del formulario */
+}
+
+.contact-form input{
+    margin-bottom: 20px;
+    box-shadow: #A6826D;
+}
+.message{
+    margin-top: 20px ;
+}
+
+.contact-form label{
+    font-size: 15px;
+}
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color_text-secundario);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: #0D0D0D;
+}
+
+#massage{
+    height: 200px;
+}
+
+/* projects */
+
+.container_projects{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color:#ffe9dbc4;
+}
+
+.projects{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_projects{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text_projects p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+
+.text_projects h1{
+    text-align: center;
+    font-size: 28px;
+}
+
+.container_box_projects{
+    display: flex; /* cambia la disposición de los hijos del contenedor, que ahora se organizarán en fila (por defecto) o en columna */
+    flex-wrap: wrap; /* Permite que los elementos secundarios se muevan a una nueva línea si no hay suficiente espacio en una sola fila. */
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.box_projects{
+    max-width: 350px;
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* La imagen ocupa el 100% del alto del contenedor */
+    object-fit: cover; /* Hace que la imagen cubra el contenedor sin deformarse */
+    margin: 14px;
+    
+    
+}
+
+
+.img_projects{
+    height: 350px;
+    width: auto;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.project_content a {
+    border: none;
+}
+
+.imagen-con-texto {
+    position: relative; /* Esto permite posicionar el texto sobre la imagen */
+    display: inline-block; /* Mantiene el contenido en línea */
+    transition: all 300ms;
+}
+
+.imagen-con-texto :hover{
+    background-color: #ebdfd985;
+    transition: all 300ms;
+}
+.imagen-con-texto img {
+    width: 100%; /* Ajusta el tamaño de la imagen, puedes modificarlo según tus necesidades */
+    height: auto;
+}
+
+.imagen-con-texto img:hover {
+    transform: scale(1.05);
+    border-radius: 20px;
+}
+
+.texto-en-imagen {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 85%; /* Ajusta la posición vertical al centro */
+    left: 50%; /* Ajusta la posición horizontal al centro */
+    transform: translate(-50%, -50%); /* Centra el texto en la imagen */
+    color: white; /* Color del texto */
+    background-color: #a6826d98; /* Fondo semitransparente */
+    padding: 5px;
+    font-size: 18px; /* Tamaño de la fuente */
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* team */
+.container_team{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color:white;
+}
+
+.team{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text_team{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text_team p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--color_text-font);
+    font-weight: 500;
+    text-align: center;
+}
+.text_team h1{
+    text-align: center;
+    font-size: 28px;
+}
+
+.container_box_team{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las cajas de equipo en el contenedor */
+    gap: 50px; /* Espaciado entre cada caja de equipo */
+    margin-top: 40px;
+    text-align: center;
+}
+
+.box_team {
+    width: 300px; /* Ajusta el ancho de cada caja de equipo */
+    text-align: center;
+}
+
+.container_box_team img{
+    height: 350px;
+    width: 100%; /* Ajusta la imagen al ancho de la caja */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+    border-radius: 20px;
+}
+
+/* mapa */
+
+.map-container {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mapa {
+    width: 100%;
+    height: 100vh; /* Asegura que el iframe ocupe toda la pantalla */
+    border: 0; /* Elimina el borde del mapa */
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    background-color: var(--color_text-background);
+}
+
+.footer .box_footer-primary{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+    justify-items: center;
+}
+.box{
+    text-align: center;
+}
+.footer .box{
+    margin: 0;
+    width: 100%;
+}
+.footer .box_footer-primary p{
+    font-size: 14px;
+}
+
+.footer .box_footer-primary .socialMediaFooter ul a{
+    display: inline-block;
+}
+
+.nav ul{
+    list-style-type: none;
+    padding: 0;
+    gap: 15px;
+}
+
+.nav ul a{
+    color: #0D0D0D;
+    font-weight:500;
+    transition: all 300ms ease;
+}
+
+.nav ul a:hover{
+    color: #A6826D;
+}
+
+.contactos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactos a{
+    display: flex;
+    align-items: center;
+}
+
+.contactos img{
+    margin-right: 10px;
+    transition: all 300ms ease;
+}
+
+.contactos img:hover{
+    transform: scale(1.2);
+}
+.contactos a p{
+    color: #0D0D0D;
+}
+
+.socialMediaFooter a {
+    display: block; 
+    margin-bottom: 10px; 
+    margin-right: 10px;
+}
+
+.socialMediaFooter img {
+    width: 24px; 
+    height: auto;
+    margin-right: 10px;
+    transition: all 300ms ease;
+}
+
+.socialMediaFooter img:hover{
+    transform: scale(1.2);
+}
+
+.footer .box_footer-secundary{
+    background-color: #bba090;
+    text-align: center;
+    padding: 15px 10px;
+    color: rgb(255, 255, 255, 0.9);
+}
