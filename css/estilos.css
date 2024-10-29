@@ -697,6 +697,10 @@ header {
     border-radius: 20px;
 }
 
+.container_box_team img:hover{
+    transform: scale(1.05);
+}
+
 /* mapa */
 
 .map-container {
